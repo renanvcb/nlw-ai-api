@@ -8,12 +8,15 @@ datasource db {
 }
 
 model video {
-  id            String  @id @default(uuid())
+  id            String   @id @default(uuid())
   name          String
   path          String
   transcription String?
+  createdAt     DateTime @default(now())
 }
 
 model prompt {
-  id String @id @default(uuid())
+  id       String @id @default(uuid())
+  title    String
+  template String
 }
